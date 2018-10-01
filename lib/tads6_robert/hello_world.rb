@@ -1,7 +1,7 @@
 module Tads6Robert
   class HelloWorld
-    def say
-      "hello World"
+    def say(word)
+      word
     end
   end
 end
