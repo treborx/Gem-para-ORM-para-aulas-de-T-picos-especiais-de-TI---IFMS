@@ -1,6 +1,6 @@
 module Tads6Robert
   class HelloWorld
-    def say(word)
+    def self.say(word)
       word
     end
   end
