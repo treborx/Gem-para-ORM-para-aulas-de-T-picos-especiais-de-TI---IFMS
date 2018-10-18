@@ -23,10 +23,10 @@ Ou instale você mesmo como:
 Siga os seguintes passos para utilizar a gem.
 
 # Require necessário
-require 'tarcisiobrags_tads'
+require 'tads6robert'
 
-# Sua classe deve herdar a classe TarcisiobragsTads::ORM
-class ExemploClasse < TarcisiobragsTads::ORM
+# Sua classe deve herdar a classe Tads6Robert::ORM
+class ExemploClasse < Tads6Robert::ORM
   # Toda classe deve conter um :ID obrigatoriamente
   attr_accessor :id, :modelo
 
@@ -36,7 +36,7 @@ class ExemploClasse < TarcisiobragsTads::ORM
   end
 
   # Este método deve ser reescrito obrigatoriamente com o
-  # caminho para seu banco de dados 'db/nomeclasseminúsculo'
+  # caminho para seu banco de dados 'db/nomedaclasseminúsculo'
   def self.path
     'local/onde/deseja/salvar/os/dados'
   end
@@ -47,7 +47,7 @@ class ExemploClasse < TarcisiobragsTads::ORM
   Criar um novo registro:
 
   ExemploClasse.criar(
-    modelo: 'Fusca 5000'
+    modelo: 'corsa mil'
   )
 
 #Listar todos os registros:
@@ -61,7 +61,7 @@ class ExemploClasse < TarcisiobragsTads::ORM
 #Atualizar um registro específico
 
   carro = ExemploClasse.selecionar(1)
-  carro.modelo = "novo modelo"
+  carro.modelo = "modelo novo"
   ExemploClasse.atualizar(carro)
 
 # Remover um registro específico
