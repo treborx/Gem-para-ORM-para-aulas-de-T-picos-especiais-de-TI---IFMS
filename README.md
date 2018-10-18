@@ -1,11 +1,8 @@
 # Tads6Robert
 
+Este projeto foi desenvolvido em sala de aula para demostrar o uso e aplicação de gems, para que funcionalidades sejam encapsuladas para possiveis utilizações em novas aplicações.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tads6_robert`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-Instalação
+# Instalação
 
 Adicione esta linha ao Gemfile do seu aplicativo:
 
@@ -20,24 +17,69 @@ E então execute:
 Ou instale você mesmo como:
 
     $ gem install tads6_robert
-## Usage
 
-TODO: Write usage instructions here
+# Como Utilizar
 
-## Development
+Siga os seguintes passos para utilizar a gem.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+# Require necessário
+require 'tarcisiobrags_tads'
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# Sua classe deve herdar a classe TarcisiobragsTads::ORM
+class ExemploClasse < TarcisiobragsTads::ORM
+  # Toda classe deve conter um :ID obrigatoriamente
+  attr_accessor :id, :modelo
 
-## Contributing
+  # O construtor deve seguir o exemplo abaixo
+  def initialize(hash)
+    @titulo = hash.first[:modelo]
+  end
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tads6_robert. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+  # Este método deve ser reescrito obrigatoriamente com o
+  # caminho para seu banco de dados 'db/nomeclasseminúsculo'
+  def self.path
+    'local/onde/deseja/salvar/os/dados'
+  end
 
-## License
+#Passo a Passo
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+  Crie o diretório com o caminho especificado no método self.path
+  Criar um novo registro:
 
-## Code of Conduct
+  ExemploClasse.criar(
+    modelo: 'Fusca 5000'
+  )
 
-Everyone interacting in the Tads6Robert project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/treborx/tads6_robert/blob/master/CODE_OF_CONDUCT.md).
+#Listar todos os registros:
+
+  puts ExemploClasse.listar
+
+  Selecionar um registro específico
+
+  puts ExemploClasse.selecionar(1)
+
+#Atualizar um registro específico
+
+  carro = ExemploClasse.selecionar(1)
+  carro.modelo = "novo modelo"
+  ExemploClasse.atualizar(carro)
+
+# Remover um registro específico
+
+  ExemploClasse.remove(1)
+
+# Importante
+
+      O atributo id deve estar contido, contudo ele não deve ser inicializado.
+      O método path obrigatoriamente deve ser reescrito para o local onde você deseja salvar os dados
+
+    def self.path
+      'local/onde/deseja/salvar/os/dados'
+    end
+
+# Licença
+
+  A gem está disponível como código aberto sob os termos do MIT License.
+  Código de Conduta
+
+  Espera-se que todos que interagem nas bases de código do projeto Tads6Robert.
