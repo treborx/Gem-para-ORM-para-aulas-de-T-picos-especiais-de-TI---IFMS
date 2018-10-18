@@ -35,8 +35,7 @@ class ExemploClasse < Tads6Robert::ORM
     @titulo = hash.first[:modelo]
   end
 
-  # Este método deve ser reescrito obrigatoriamente com o
-  # caminho para seu banco de dados 'db/nomedaclasseminúsculo'
+  # Este método deve ser reescrito obrigatoriamente com o caminho para seu banco de dados 'db/nomedaclasseminúsculo'
   def self.path
     'local/onde/deseja/salvar/os/dados'
   end
