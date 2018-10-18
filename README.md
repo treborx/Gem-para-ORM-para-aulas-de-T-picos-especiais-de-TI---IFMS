@@ -5,22 +5,21 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
-## Installation
+Instalação
 
-Add this line to your application's Gemfile:
+Adicione esta linha ao Gemfile do seu aplicativo:
 
-```ruby
+ruby
 gem 'tads6_robert'
-```
 
-And then execute:
 
-    $ bundle
+E então execute:
 
-Or install it yourself as:
+    $ bundle install
+
+Ou instale você mesmo como:
 
     $ gem install tads6_robert
-
 ## Usage
 
 TODO: Write usage instructions here
