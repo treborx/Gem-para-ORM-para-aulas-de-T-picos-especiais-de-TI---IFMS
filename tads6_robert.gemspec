@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Robert Santos"]
   spec.email         = ["robert218.rs@gmail.com"]
 
-  spec.summary       = "Gem para ORM para aulas de Tópicos especiais de TI - IFMS "
+  spec.summary       = "Gem para Mapeamento Objeto Relacional"
   spec.description   = "Gem para ORM para aulas de Tópicos especiais de TI - IFMS "
   spec.homepage      = "http://www.ifms.edu.br"
   spec.license       = "MIT"
