@@ -5,6 +5,6 @@ RSpec.describe Tads6Robert do
 
   it "Deveria mostrar as palavras Hello World" do
    x = Tads6Robert::HelloWorld.new
-  expect(x.say("Hello carai")).to eq("Hello carai")
+  expect(x.say("Iai galerinha")).to eq("Iai galerinha")
   end
 end
