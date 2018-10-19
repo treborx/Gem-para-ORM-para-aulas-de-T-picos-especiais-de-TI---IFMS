@@ -1,3 +1,6 @@
+require "yaml"
+require "FileUtils"
+
 module Tads6Robert
   class ORM
     def self.criar(*atributos)
